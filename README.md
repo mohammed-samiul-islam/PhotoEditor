@@ -1,59 +1,43 @@
-🖼️ Image Batch Processing Tool (Python)
+# PhotoEditor – Batch Image Processing (Python)
 
-This project is a simple Python-based image processing script that automates bulk image editing using the Pillow (PIL) library. It reads all images from a specified input directory, applies a series of transformations, and saves the edited versions to an output folder with modified filenames.
+A Python script that batch-edits every image in a folder using Pillow and saves the results to an output folder.
 
-✨ Features
+## Features
 
-Batch processes all images in a folder automatically
+For every image in `./images`, `editor.py`:
 
-Applies sharpening filter for improved clarity
+- Applies a sharpen filter
+- Converts to grayscale
+- Rotates by -90°
+- Enhances contrast by a factor of 1.5
+- Saves the result to `./edited` as `<name>_edited.<ext>`
 
-Converts images to grayscale
+## Tech Stack
 
-Rotates images by 90 degrees
+Python · Pillow (PIL) · `os`
 
-Enhances image contrast for better visual quality
+## Project Structure
 
-Saves edited images with a clean and consistent filename format
+```
+editor.py   # batch processing script
+```
 
-🛠️ Technologies Used
+## Getting Started
 
-Python
+```bash
+pip install Pillow
+mkdir -p images edited     # put your images in ./images
+python editor.py
+```
 
-Pillow (PIL) library
+### Example
 
-OS module for file handling
+```
+images/photo1.jpg  ->  edited/photo1_edited.jpg
+```
 
-🔄 How It Works
+## Use Cases
 
-The script scans the ./images directory for image files.
-
-Each image is opened and processed with the following steps:
-
-Sharpening filter applied
-
-Converted to grayscale
-
-Rotated by -90 degrees
-
-Contrast enhanced by a factor of 1.5
-
-The edited image is saved in the ./edited directory with _edited appended to the original filename.
-
-📁 Example Output
-
-Input:
-photo1.jpg
-
-Output:
-photo1_edited.jpg
-
-🎯 Use Cases
-
-Automating repetitive image editing tasks
-
-Preparing datasets for machine learning or computer vision projects
-
-Bulk photo enhancement
-
-Learning image manipulation with Python
+- Automating repetitive image edits
+- Preparing images for datasets
+- Learning image manipulation with Pillow
